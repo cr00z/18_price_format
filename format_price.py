@@ -10,14 +10,14 @@ def get_cmdline_args():
 
 
 def format_price(price):
-    if type(price) is str or type(price) is int or type(price) is float:
+    if not isinstance(price, bool):
         try:
             float_price = round(float(price), 2)
             if float_price.is_integer():
                 return '{:,}'.format(int(float_price)).replace(',', ' ')
             else:
                 return '{:,.2f}'.format(float_price).replace(',', ' ')
-        except ValueError:
+        except (ValueError, TypeError):
             return None
 
 
