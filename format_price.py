@@ -1,3 +1,14 @@
+import argparse
+
+
+def get_cmdline_args():
+    parser = argparse.ArgumentParser(
+        description='CLI interface for Price Formatter'
+    )
+    parser.add_argument('price', help='price string')
+    return parser.parse_args()
+
+
 def format_price(price):
     try:
         float_price = round(float(price), 2)
@@ -10,4 +21,5 @@ def format_price(price):
 
 
 if __name__ == '__main__':
-    print(format_price(None))
+    args = get_cmdline_args()
+    print(format_price(args.price))
