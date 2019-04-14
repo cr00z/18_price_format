@@ -2,7 +2,7 @@
 
 Program presents CLI and functional interface for price formatting.
 
-Inputs string representation of price (such as 12345.678) and outputs pretty view of it (12 345.68).
+Inputs string representation of price (such as '12345.678') and outputs pretty view of it ('12 345.68').
 
 # Quickstart
 
