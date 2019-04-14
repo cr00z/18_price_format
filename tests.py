@@ -36,6 +36,14 @@ class FormatPriceTestCase(unittest.TestCase):
         pretty_price = format_price('123456789e-3')
         self.assertEqual(pretty_price, '123 456.79')
 
+    def test_true_to_price_(self):
+        pretty_price = format_price(True)
+        self.assertIsNone(pretty_price)
+
+    def test_false_to_price_(self):
+        pretty_price = format_price(False)
+        self.assertIsNone(pretty_price)
+
 
 if __name__ == '__main__':
     unittest.main()
